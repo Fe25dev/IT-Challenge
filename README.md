@@ -1,6 +1,6 @@
 # IT Challenge Formar
 
-- Mi proyecto consiste en una app Web para la gestion de tareas se visualisan en una sola pantalla ,pensado  para un manejo sencillo e intuitivo aunque puede agregarse mas secciones y interactividad.
+- Mi proyecto consiste en una app Web para la gestion de tareas se visualisan en una sola pantalla ,pensado  para un manejo sencillo e intuitivo aunque pueden agregarse mas secciones y interactividad.
 
 ## Tegnologias Aplicadas
 
@@ -24,7 +24,7 @@
 
 ## Installacion
 
-Install IT-Challenge con npm una ves descargado este repositorio ,localmente instalamos las dependencias previamente ubicandonos en la carpeta del proyecto.
+Instalar IT-Challenge con npm, una ves descargado este repositorio ,localmente instalamos las dependencias previamente ubicandonos en la carpeta del proyecto (El proyecto nesesita tener instalado la version 20 de node para funcionar correctamente.Puede instalarse con nvm y seleccionar cual usar ,o instalar globalmente)
   Luego ubicados en la carpeta correspondiente al backend abrimos consola o desde nuestro ide. 
 
 ```bash
