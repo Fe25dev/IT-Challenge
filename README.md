@@ -1,6 +1,6 @@
 # IT Challenge Formar
 
-- Mi proyecto consiste en una app Web para la gestion de tareas personales se visualisan en una sola pantalla ,pensado  para un manejo sencillo e intuitivo aunque puede agregarse mas secciones y interactividad.
+- Mi proyecto consiste en una app Web para la gestion de tareas se visualisan en una sola pantalla ,pensado  para un manejo sencillo e intuitivo aunque puede agregarse mas secciones y interactividad.
 
 ## Tegnologias Aplicadas
 
@@ -44,7 +44,11 @@ De manera similar una ves ubicados  en la carpeta del Frontend
   cd Frontend
   npm run dev
 ```
-## Captura de Pantalla
+## Gif de funcionamiento
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Demo](./assets/demo.gif)
+
+## ScreenShot de la app
+
+![App Screenshot](./assets/demoApp.png)
 
