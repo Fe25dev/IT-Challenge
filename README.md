@@ -10,7 +10,6 @@
 
 
 
-
 ## Autor
 
 - [@Fernando Calisaya](https://github.com/Fe25dev)
@@ -26,15 +25,12 @@
 ## Installacion
 
 Install IT-Challenge con npm una ves descargado este repositorio ,localmente instalamos las dependencias previamente ubicandonos en la carpeta del proyecto.
-
-```bash
-  npm install 
-```
-luego ubicados en la carpeta correspondiente al backend abrimos consola o desde nuestro ide. 
+  Luego ubicados en la carpeta correspondiente al backend abrimos consola o desde nuestro ide. 
 
 ```bash
  
   cd Backend
+  npm install 
   npm run start
 ```
 
@@ -42,6 +38,7 @@ De manera similar una ves ubicados  en la carpeta del Frontend
 
 ```bash
   cd Frontend
+  npm install 
   npm run dev
 ```
 ## Gif de funcionamiento
