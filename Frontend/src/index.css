@@ -1,0 +1,169 @@
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #faf8fa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------- RESET--------- */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* --------- CONTENEDOR PRINCIPAL --------- */
+.app-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  background: #ae8fcc;
+  color: #ffff;
+  font-weight: bold; 
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.app-container .task-section-container .list-section h2 {
+  text-align: center;
+}
+
+/* --------- FORMULARIO + LISTA --------- */
+.task-section-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  flex-wrap: wrap; 
+  margin-top: 2rem;
+}
+
+.form-section, .list-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f0eeee1a; /* leve contraste con fondo */
+}
+
+/* --------- FORMULARIO --------- */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: 8rem;
+}
+
+.task-form button {
+  align-self: flex-start;
+}
+.error-message-container {
+  min-height: 45px;
+}
+
+/* --------- LISTA DE TAREAS --------- */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #444;
+  padding: 0.6rem 0;
+}
+
+.task-item .info {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.task-item span {
+  font-size: 1rem;
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* --------- BOTONES --------- */
+
+.custom-dark-btn {
+  background-color: #202020;   
+  color: white;
+  border: none;
+  width: 40%;
+  font-weight: bold;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+.custom-dark-btn:hover {
+  background-color: #2e1e3f;   
+  color: white;
+}
+
+/* --------- ENLACES --------- */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/* --------- DISEÑO RESPONSIVO PARA PANTALLAS PEQUEÑAS --------- */
+@media (max-width: 600px) {
+  .task-section-container {
+    flex-direction: column; 
+  }
+
+  .form-section,
+  .list-section {
+    padding: 1rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+  }
+
+  .task-form input,
+  .task-form textarea {
+    max-width: 100%; 
+    margin-inline: 0.5rem; 
+  }
+
+  button {
+    width: 100%; 
+  }
+
+  h1 {
+    font-size: 2rem; 
+  }
+}
