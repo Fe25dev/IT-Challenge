@@ -43,7 +43,7 @@ De manera similar una ves ubicados  en la carpeta del Frontend
 ```
 ## Gif de funcionamiento
 
-![Demo](./assets/Demo.gif)
+![Demo](./assets/demo2.gif)
 
 ## ScreenShot de la app
 

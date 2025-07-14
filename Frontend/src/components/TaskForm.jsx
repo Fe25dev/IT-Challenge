@@ -19,6 +19,12 @@ export default function TaskForm({ onTaskCreated }) {
     setError('');
     setSearchTitle('');
   };
+  const [success, setSuccess] = useState('');
+  const showSuccess = (msg) => {
+    setSuccess(msg);
+    setTimeout(() => setSuccess(''), 3000);
+  };
+
 
   // Crear o actualizar
   const handleSubmit = async (e) => {
@@ -31,12 +37,12 @@ export default function TaskForm({ onTaskCreated }) {
     try {
       if (editingId) {
         await updateTask(editingId, { title, description });
-        alert('Tarea actualizada');
+        showSuccess('Tarea actualizada');
       } else {
         const newTask = { title, description, completed: false };
         const created = await createTask(newTask);
         onTaskCreated(created);
-        alert('Tarea creada');
+        showSuccess('Tarea creada');
       }
 
       setTitle('');
@@ -120,19 +126,25 @@ export default function TaskForm({ onTaskCreated }) {
         </button>
         {editingId && (
           <button onClick={clearForm} type="button" className="btn btn-danger">
-            Cancelar edición
+            Cancelar 
           </button>
         )}
       </div>
     </div>
 
-    <div className="error-message-container">
-      {error && (
+    <div className="message-container">
+      {error ? (
         <div className="alert alert-danger mt-3 mb-0 py-2 px-3">
           {error}
         </div>
-      )}
+      ) : success ? (
+        <div className="alert alert-success mt-3 mb-0 py-2 px-3">
+          {success}
+        </div>
+      ) : null}
+
     </div>
+
   </>
 );
 }

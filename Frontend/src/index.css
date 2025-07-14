@@ -83,7 +83,7 @@ body {
 .task-form button {
   align-self: flex-start;
 }
-.error-message-container {
+.message-container {
   min-height: 45px;
 }
 
