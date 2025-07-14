@@ -3,7 +3,7 @@ const express = require('express');
 module.exports = (dbInstance) => {
   const router = express.Router();
 
-  // GET all tasks
+  // GET todas tasks
   router.get('/', async (req, res) => {
     try {
       const tasks = await dbInstance.getAllTasks();
@@ -27,7 +27,7 @@ module.exports = (dbInstance) => {
       }
     });
 
-  // POST create task
+  // POST crear task
   router.post('/', async (req, res) => {
     const { title, description, completed } = req.body;
     if (!title) return res.status(400).json({ error: 'Título requerido' });
@@ -41,7 +41,7 @@ module.exports = (dbInstance) => {
     }
   });
 
-  // PUT update task
+  // PUT actualizar task
   router.put('/:id', async (req, res) => {
     const { id } = req.params;
     const updated = await dbInstance.updateTaskById(id, req.body);
@@ -49,7 +49,7 @@ module.exports = (dbInstance) => {
     res.json(updated);
   });
 
-  // DELETE task
+  // DELETE borrar task
   router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     const deleted = await dbInstance.deleteTaskById(id);

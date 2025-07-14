@@ -1,10 +1,14 @@
 
-
 exports.getAllTasks = async (req, res, db) => {
   try {
     const { title } = req.query;
+    let tasks = await db.getAllTasks();
 
-    const tasks = await db.getAllTasks();
+    // a booleano
+    tasks = tasks.map(task => ({
+      ...task,
+      completed: Boolean(task.completed),
+    }));
 
     if (title) {
       const match = tasks.find(task =>
@@ -20,14 +24,21 @@ exports.getAllTasks = async (req, res, db) => {
   }
 };
 
-
 exports.createTask = async (req, res, db) => {
   const { title, description, completed = false } = req.body;
   if (!title) return res.status(400).json({ error: 'Título requerido' });
 
   try {
-    const newTask = await db.createTask({ title, description, completed });
-    res.status(201).json(newTask);
+    const { id } = await db.addTask(title, description, completed ? 1 : 0);
+
+    const newTask = await db.getTaskById(id);
+
+    const task = {
+      ...newTask,
+      completed: Boolean(newTask.completed),
+    };
+
+    res.status(201).json(task);
   } catch (err) {
     console.error(' Error en createTask:', err.message);
     res.status(500).json({ error: 'Error al crear tarea' });
@@ -41,7 +52,14 @@ exports.updateTask = async (req, res, db) => {
   try {
     const updated = await db.updateTask(id, { title, description, completed });
     if (!updated) return res.status(404).json({ error: 'Tarea no encontrada' });
-    res.json(updated);
+
+    // a booleano antes 
+    const task = {
+      ...updated,
+      completed: Boolean(updated.completed),
+    };
+
+    res.json(task);
   } catch (err) {
     console.error(' Error en updateTask:', err.message);
     res.status(500).json({ error: 'Error al actualizar tarea' });
