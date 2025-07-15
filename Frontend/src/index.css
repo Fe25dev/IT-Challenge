@@ -19,11 +19,10 @@ html, body {
   margin: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
+ body {
+  display: block;
+  padding: 1rem;
+  overflow-y: auto;
 }
 
 /* --------- CONTENEDOR PRINCIPAL --------- */
@@ -58,7 +57,7 @@ body {
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f0eeee1a; /* leve contraste con fondo */
+  background-color: #f0eeee1a; 
 }
 
 /* --------- FORMULARIO --------- */
@@ -125,7 +124,7 @@ body {
 }
 
 .custom-dark-btn:hover {
-  background-color: #2e1e3f;   
+  background-color: #6f42c1;   
   color: white;
 }
 
@@ -150,7 +149,7 @@ a:hover {
     padding: 1rem 0.5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
-    background-color: #f5f5f5;
+    background-color: #ae8fcc;
   }
 
   .task-form input,
